@@ -1,0 +1,515 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Poetsen+One&family=Quicksand:wght@300..700&display=swap');
+
+:root {
+    --first-color: #f6dcce;
+    --second-color: #c27c88;
+    --third-color: #314a43;
+    --fourth-color: #737c7b;
+    --fifth-color: #eee;
+    --first-font-style: "Josefin Sans", sans-serif;
+    --second-font-style: "Quicksand", sans-serif;
+    --third-font-style: "PT Sans", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 1.5rem;
+    font-family: var(--third-font-style);
+    display: grid;
+    grid-template-columns: 40% 60%;
+    text-align: justify;
+}
+
+/* overall sidebar/top-mobile-nav section */
+h1, section a {
+    font-family: var(--first-font-style);
+    text-decoration: none;
+    font-weight: 900;
+}
+
+h2 {
+    font-family: var(--second-font-style);
+}
+
+.introduction p {
+    text-align: justify;
+}
+
+.introduction img {
+    border-radius: 100px;
+}
+
+/* overall main section */
+main {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+}
+
+main article {
+    margin: 50px 0;
+}
+
+/* overall skills section */
+#skills article {
+    padding: 20px 10px;
+}
+
+/* overall projects section */
+#projects article ul {
+    list-style-type: none;
+}
+
+#projects figcaption {
+    font-weight: 900;
+}
+
+.credit, #contact p {
+    text-align: center;
+}
+
+/* overall contact section */
+#contact p {
+    margin-top: 50px;
+}
+
+.accounts {
+    display: flex;
+    list-style-type: none;
+    flex-direction: column;
+    margin: 25px 0;
+}
+
+#contact {
+    text-align: center;
+}
+
+.accounts {
+    font-size: 3rem;
+    display: flex;
+    list-style-type:none ;
+    flex-direction: row;
+    margin: 25px 0px;
+    justify-content: center;
+}
+
+/* mobile code */
+@media screen and (max-width: 768px) {
+    body {
+        grid-template-columns: 100%;
+        background-color: var(--second-color);
+        color: var(--first-color);
+        width: 100%;
+    }
+
+/* sidebar section mobile */
+    #sidebar {
+        height: auto;
+        padding: 50px 0;
+        background-color: var(--first-color);
+        color: var(--fourth-color);
+        border-bottom: 3px solid var(--third-color);
+    }
+
+    h1 {
+        color: var(--second-color);
+        margin-top: 10px;
+    }
+
+    .introduction {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        place-items: center;
+    }
+
+    .introduction h1, .introduction h2 {
+        text-align: center;
+        padding: 5px;
+    }
+
+    .introduction p {
+        padding: 20px;
+    }
+
+    .introduction img {
+        width: 75px;
+        height: 100px;
+        margin-top: 50px;
+    }
+
+/* top navigation mobile */
+    #top-mobile-nav {
+        width: 100vw;
+        height: 7vh;
+        position: fixed;
+        top: 0;
+        background-color: var(--second-color);
+        border-bottom: 3px solid var(--fifth-color);
+    }
+
+    #top-mobile-nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        list-style-type: none;
+        vertical-align: center;
+    }
+
+    #top-mobile-nav a {
+        text-decoration: none;
+        color: var(--fifth-color);
+    }
+
+/* hiding the sidebar nav when on mobile */
+    nav {
+        display: none;
+    }
+
+/* main section mobile */
+    main {
+        width: 100vw;
+        padding: 20px;
+    }
+
+    main h2 {
+        text-align: center;
+        color: var(--fifth-color);
+        margin-bottom: 10px;
+        background-color: var(--third-color);
+        width: 90vw;
+        padding: 10px 0;
+        margin-top: 50px;
+    }
+
+    i {
+        margin-top:15px;
+        font-size: 20px;
+    }
+
+    section {
+        margin: 10px 0;
+        height: auto;
+        text-align: justify;
+    }
+
+    section a {
+        color: var(--fifth-color);
+    }
+
+/* about me section mobile */
+    #about-me {
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+    }
+
+/* skills section mobile */
+    #skills h4, #skills i {
+        color: var(--fifth-color);
+    }
+
+    #skills i {
+        padding-right: 20px;
+    }
+
+    #skills img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .skills-img-flex {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        list-style-type: none;
+    }
+
+    .resume-button, #projects ul li a, section a{
+        text-decoration: underline;
+    }
+
+    .resume-button {
+        margin-top: 20px;
+        text-align: center;
+        text-decoration: underline;
+    }
+
+/* projects mobile */
+    #projects img {
+        height: 200px;
+        width: 280px;
+        border: 3px solid var(--third-color);
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    #projects article {
+        padding-bottom: 20px;
+    }
+
+    #projects figcaption {
+        color: var(--first-color);
+    }
+
+    #projects p {
+        font-size: 1rem;
+        color: var(--third-color);
+    }
+
+    #projects ul li {
+        padding: 0 10px;
+    }
+
+    #projects ul li a {
+        padding: 0 10px;
+        font-size: 1.2rem;
+        color: var(--fifth-color);
+    }
+
+/* contact's accounts section mobile */
+    .accounts {
+        gap: 20px;
+    }
+}
+
+/* desktop code */
+@media screen and (min-width: 769px) {
+    body {
+        background-color: var(--first-color);
+        color: var(--fourth-color);
+    }
+
+    a {
+        transition: all 1.5s ease;
+    }
+
+/* hiding top nav when on desktop */
+    #top-mobile-nav {
+        display: none;
+    }
+
+/* sidebar section desktop */
+    #sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 40%;
+        height: 100vh;
+        background-color: var(--second-color);
+        color: var(--fifth-color);
+        border-right: 5px solid var(--third-color);
+    }
+
+    h1, .accounts a {
+        color: var(--fifth-color);
+    }
+
+    .introduction {
+        margin-top: 20px;
+        text-align: right;
+        padding: 0 20px;
+    }
+
+    .introduction h2 {
+        color: var(--third-color);
+    }
+
+    .introduction img {
+        height: 150px;
+        width: 150px;
+    }
+
+    nav li {
+        margin-bottom: 5px;
+        list-style-type: none;
+    }
+
+    nav a {
+        color: var(--third-color);
+        transition: 1.5s ease;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 900;
+        font-family: var(--second-font-style);
+    }
+
+    nav a::after {
+        content: " ⎯";
+        color: var(--third-color);
+    }
+
+    nav a:hover {
+        color: var(--fifth-color);
+    }
+
+    nav a:hover {
+        padding-right: 20px;
+    }
+
+/* main section desktop */
+    main {
+        margin-left: 40vw;
+        padding: 0px 30px;
+    }
+
+    main h2 {
+        text-align: left;
+    }
+
+    main h2::before {
+        content: "⎯ ";
+        color: var(--third-color);
+    }
+
+    i {
+        padding-right: 15px;
+    }
+
+    section h2 {
+        margin: 50px 0 20px;
+        color: var(--second-color);
+    }
+
+    section a {
+        color: var(--second-color);
+        transition: color 1.5s ease;
+    }
+
+    section a:hover {
+        color: var(--third-color);
+    }
+
+/* about me section desktop */
+    #about-me {
+        display: flex;
+        flex-direction: column;
+    }
+
+/* skills section desktop */
+    #skills article:hover {
+        background-color: var(--second-color);
+        color: var(--first-color);
+        border: 5px solid var(--third-color);
+        transition: all 1.5s ease;
+    }
+
+    #skills article:hover i, #skills article:hover h4 {
+        color: var(--third-color);
+    }
+
+    #skills img {
+        width: 5.5rem;
+        height: 5.5rem;
+    }
+
+    .skills-img-flex {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        list-style-type: none;
+    }
+
+    .resume-button {
+        margin-top: 20px;
+        justify-items: center;
+        background-color: var(--second-color);
+        width: fit-content;
+        padding: 10px;
+        border: 5px solid var(--third-color);
+        color: var(--fourth-color);
+        transition: box-shadow 1.5s ease;
+    }
+
+    .resume-button a {
+        color: var(--first-color);
+    }
+
+    .resume-button:hover {
+        box-shadow: 3px 3px 1px 1px var(--second-color);
+    }
+
+/* projects section desktop */
+    #projects {
+        margin-top: 100px;
+        padding-bottom: 100px;
+        text-align: center;
+    }
+
+    #projects p {
+        font-size: 1.2rem;
+    }
+
+    #projects img {
+        height: 150px;
+        width: 200px;
+        border: 5px solid var(--third-color);
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+/* contact's account section desktop */
+    .accounts a {
+        color: var(--second-color);
+    }
+}
+
+/* laptop/desktop code but for 769px to 1165px */
+@media (min-width: 769px) and (max-width: 1165px) {
+
+/* sidebar section */
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .introduction p, nav {
+        padding: 10px;
+        font-size:1rem;
+    }
+
+/* skills section */
+    main {
+        padding: 30px;
+    }
+
+    #skills img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* desktop code for projects section only with min 1440p width */
+@media screen and (min-width: 1440px) {
+    #projects img {
+        height: 350px;
+        width:400px;
+        border: 5px solid var(--third-color);
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
+    }
+}
